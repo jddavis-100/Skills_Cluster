@@ -1,32 +1,39 @@
-#R code for Skills_Cluster Beta Version Under Revision
-
 #Read table into R dataframe
 skills.pair <- read.csv(file.choose(), header=TRUE)
+
 #check that the correct column names have been imported
 colnames(skills.pair)
+
 #check that the ID, primary skill, secondary skills and occurences are correctly situated in the dataframe
 skills.pair[1:5,]
 
 #data exploration
 #check for all the occurences of the secondary_skill being coded as '1'
 skills.pair[skills.pair$primary_skill == "sql",]
+
 #count the records in the table
 nrow(skills.pair)
+
 #count a sub-set of data within your record set; example returns the number of times skill number photoshop appears as a primary skill
 nrow(skills.pair[skills.pair$primary_skill == "photoshop",])
+
 #look at the first 50 primary skills, indicates number of levels
 skills.pair[1:50,"primary_skill"]
+
 #look at the first 50 secondary skills, indicates the number of levels
 skills.pair[1:50,"secondary_skill"]
+
 #assign a vector to the secondary skill variable, count the number of times (occurences) a secondary skill appears, eg sql
 #note that this approach does not work on data not tied to a number, e.g. you have not assigned a category 
 skill.secondary <- skills.pair[,"secondary_skill"]
 sql.skill <- skills.pair[skills.pair$secondary_skill == "sql", "occurences"]
 sum(skills.pair[skills.pair$occurences == "sql", "occurences"])
 sum(sql.skill)
+
 #find out the number of times a secondary or primary skill appears
 table(skills.pair[,"secondary_skill"])
 table(skills.pair[,"primary_skill"])
+
 #return all the occurences of django as a secondary skill for each primary skill
 table(skills.pair[skills.pair$secondary_skill== "django", "primary_skill"])
 
@@ -35,5 +42,8 @@ skills.pair.coded <- read.csv(file.choose(), header=TRUE)
 skill.secondary.sql <- skills.pair.coded[skills.pair.coded$secondary_skill == "sql", "secondary_skill"]
 barplot(skills.pair.coded[skills.pair.coded$secondary_skill=="1", "occurences"])
 
-#making the boxplot
-#cluster analysis
+#making the boxplot http://www.chlt.org/StatisticalMethods/graphing-results.html
+barplot(skills.pair.coded[skills.pair.coded$secondary_skill=="1", "occurences"], col = 50, xlab = "occurences", horiz="true")
+title("Occurences of Photoshop as a Secondary Skill")
+legend("bottomright", title="Occurences", title="Primary Skill"
+       skill.vector(skills.pair.coded[skills.pair$"2", "Primary Skill"]), fill=50(length(skills.pair.coded$ == "1", "primary_skill"])), cex = 0.75
