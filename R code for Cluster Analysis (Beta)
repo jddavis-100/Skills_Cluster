@@ -42,7 +42,7 @@ skills.pair.coded <- read.csv(file.choose(), header=TRUE)
 skill.secondary.sql <- skills.pair.coded[skills.pair.coded$secondary_skill == "sql", "secondary_skill"]
 barplot(skills.pair.coded[skills.pair.coded$secondary_skill=="1", "occurences"])
 
-#making the boxplot http://www.chlt.org/StatisticalMethods/graphing-results.html
+#making the boxplot 
 barplot(skills.pair.coded[skills.pair.coded$secondary_skill=="1", "occurences"], col = 50, xlab = "occurences", horiz="true")
 title("Occurences of Photoshop as a Secondary Skill")
 legend("bottomright", title="Occurences", title="Primary Skill"
