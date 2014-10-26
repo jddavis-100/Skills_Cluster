@@ -50,7 +50,7 @@ skill.secondary.sql <- skills.pair.coded[skills.pair.coded$secondary_skill == "s
 barplot(skills.pair.coded[skills.pair.coded$secondary_skill=="1", "occurences"])
 
 #making the boxplot 
-barplot(skills.pair.coded[skills.pair.coded$secondary_skill=="1", "occurences"], col = 50, xlab = "occurences", horiz="true")
+boxplot(skills.pair.coded[skills.pair.coded$secondary_skill=="1", "occurences"], col = 50, xlab = "occurences", horiz="true")
 title("Occurences of Photoshop as a Secondary Skill")
 legend("bottomright", title="Occurences", title="Primary Skill"
        skill.vector(skills.pair.coded[skills.pair$"2", "Primary Skill"]), fill=50(length(skills.pair.coded$ == "1", "primary_skill"])), cex = 0.75
