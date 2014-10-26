@@ -1,3 +1,9 @@
+#This code was written for a PyLadies Hackathon in 2014
+#It is heavily annotated and for education/demonstration only.  
+#The entire code for cluster analysis is not here, just enough to get you started and to learn some basic stats technqiues you may need in R
+#SQLite3 database was generated and used for this application separately and data was imported in form of csv files
+#There are options to connect directly to SQL database from R, but they are not listed here
+
 #Read table into R dataframe
 skills.pair <- read.csv(file.choose(), header=TRUE)
 
@@ -24,7 +30,8 @@ skills.pair[1:50,"primary_skill"]
 skills.pair[1:50,"secondary_skill"]
 
 #assign a vector to the secondary skill variable, count the number of times (occurences) a secondary skill appears, eg sql
-#note that this approach does not work on data not tied to a number, e.g. you have not assigned a category 
+#note that this approach does not work on data not tied to a number, e.g. you have not assigned a number to the category
+#if you are not using machine learning you can do this manually...if you are using machine learning you will do this with a random number generator
 skill.secondary <- skills.pair[,"secondary_skill"]
 sql.skill <- skills.pair[skills.pair$secondary_skill == "sql", "occurences"]
 sum(skills.pair[skills.pair$occurences == "sql", "occurences"])
